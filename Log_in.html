@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Ruedas - Ingreso</title>
+    <link rel="stylesheet" href="styles/Log_in_style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Franja superior -->
+        <div class="top-bar">
+            <center><img src="imgs/Logo.png" alt="Logo ESPE" class="top-logo"></center>
+        </div>
+
+        <!-- Contenedor translúcido -->
+        <div class="content-box">
+            <header>
+                <h2 class="logo">ESPE</h2>
+                <h1 class="title">Sobre Ruedas</h1>
+            </header>
+
+            <main>
+                <h3 class="subtitle">INGRESE SUS CREDENCIALES DE ACCESO</h3>
+
+                <form class="login-form">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario">
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+
+                    <div class="remember">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Recuérdame</label>
+                    </div>
+
+                    <div class="buttons">
+                        <button type="button" onclick="location.href='Sign up.html'" class="btn-register">Registrarse</button>
+                        <button type="button" onclick="location.href='Home.html'" class="btn-login">Iniciar sesión</button>
+                    </div>
+                </form>
+            </main>
+
+            <footer>
+                <p>DESARROLLADO POR:</p>
+                <img src="imgs/ITIN.jpeg" alt="Logo ESPE" class="footer-logo">
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

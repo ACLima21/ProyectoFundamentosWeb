@@ -1,0 +1,167 @@
+/* --- Ajustes generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* --- Contenedor principal --- */
+.container {
+    width: 440px;
+    height: 956px;
+    border: 2px solid #e6e6e6;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+/* --- Franja superior verde --- */
+.top-bar {
+    height: 100px;
+    background-color: #006400; /* Verde ESPE */
+    width: 100%;
+}
+.top-logo{
+    width: auto;         /* tamaño controlado */
+    height: 100px;        /* mantiene proporción */
+}
+
+/* --- Contenedor del contenido principal translúcido --- */
+.content-box {
+    flex: 1;
+    margin: 20px;
+    background-color: rgba(0, 100, 0, 0.1); /* Verde translúcido */
+    border-radius: 12px;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --- Encabezado --- */
+header {
+    text-align: center;
+}
+
+.logo {
+    color: #006400; /* Verde ESPE */
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.title {
+    font-size: 30px;
+    color: #ff4500; /* Naranja rojizo */
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+/* --- Subtítulo --- */
+.subtitle {
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    margin: 25px 0;
+}
+
+/* --- Formulario --- */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.login-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.login-form input:focus {
+    border-color: #ff4500;
+}
+
+/* --- Checkbox --- */
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.remember label {
+    font-size: 13px;
+    color: #444;
+}
+
+/* --- Botones --- */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón de registro (rojo) */
+.btn-register {
+    background-color: #d32f2f;
+    color: #fff;
+}
+
+.btn-register:hover {
+    background-color: #b71c1c;
+}
+
+/* Botón de inicio de sesión (azul) */
+.btn-login {
+    background-color: #1976d2;
+    color: #fff;
+}
+
+.btn-login:hover {
+    background-color: #0d47a1;
+}
+
+/* --- Pie de página --- */
+footer {
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+    padding-top: 20px;
+}
+.footer-logo {
+    margin-top: 8px;
+    width: 240px;         /* tamaño controlado */
+    height: auto;        /* mantiene proporción */
+}

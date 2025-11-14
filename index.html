@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acompañante</title>
+    <link rel="stylesheet" href="styles/Home_style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Fondo -->
+    <div class="fondo">
+        <img src="imgs/Fondo-Web.png" alt="Fondo" class="fondo-img">
+    </div>
+
+    <!-- Contenedor principal -->
+    <main class="container">
+
+        <!-- Header Verde -->
+        <header class="header-verde">
+            <img src="imgs/Logo.png" alt="Logo Águila" class="logo">
+        </header>
+
+        <!-- Formulario de sesión -->
+        <section class="form-sesion">
+            <h2>INICIASTE SESIÓN COMO:</h2>
+            <h3 class="acompanante">ACOMPAÑANTE</h3>
+            <h3 class="bienvenido">BIENVENIDO:</h3>
+
+            <!-- Historial Rutas -->
+            <div class="input-group">
+                <label>HISTORIAL RUTAS:</label>
+                <input type="text" placeholder="CADE" readonly>
+                <input type="text" placeholder="La Chorrera" readonly>
+            </div>
+
+            <!-- Nueva Ruta: Botón de Google Maps -->
+            <div class="nueva-ruta">
+                <label>INGRESAR NUEVA RUTA:</label>
+                <button class="btn-mapa" onclick="abrirGoogleMaps()">
+                    <img src="imgs/Mapa-Web.png" alt="Seleccionar en Google Maps">
+                </button>
+            </div>
+
+            <!-- Opciones Chofer -->
+            <div class="opciones-chofer">
+                <p>--- OPCIONES PARA ELEGIR CHOFER ---</p>
+
+                <button class="btn-buscar">
+                    <img src="imgs/Chofer-Web.png" alt="Buscar Chofer">
+                    <span>BUSCAR NUEVO CHOFER:</span>
+                </button>
+
+                <button class="btn-elegir">
+                    <img src="imgs/ElegirUsuario-Web.png" alt="Elegir Chofer">
+                    <span>ELEGIR CHOFER:</span>
+                </button>
+            </div>
+
+            <!-- Acciones finales (SALIR al final) -->
+            <div class="acciones-finales">
+                <button class="btn-ingresar">
+                    <img src="imgs/Chofer-Web.png" alt="Ingresar como Chofer">
+                    <span>INGRESAR COMO CHOFER</span>
+                </button>
+
+                <button class="btn-registro" onclick="location.href='Sign_up_driver.html'">
+                    <img src="imgs/Carro-Web.png" alt="Registrarse">
+                    <span>REGISTRATE COMO CHOFER</span>
+                </button>
+
+                <!-- SALIR AL FINAL -->
+                <button class="btn-salir" onclick="location.href='Log_in.html'">
+                    <img src="imgs/Salir-Web.png" alt="Salir">
+                    <span>SALIR</span>
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Script para abrir Google Maps -->
+    <script>
+        function abrirGoogleMaps() {
+            // Abre Google Maps en modo "elegir ubicación"
+            window.open(
+                'https://www.google.com/maps/search/?api=1&query=ecuador',
+                '_blank'
+            );
+        }
+    </script>
+
+</body>
+
+</html>
