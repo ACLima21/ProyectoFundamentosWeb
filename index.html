@@ -1,98 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Acompañante</title>
-    <link rel="stylesheet" href="styles/Home_style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Ruedas - Ingreso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/Log_in_style.css">
 </head>
-
 <body>
+    <div class="container">
+        <!-- Franja superior -->
+        <div class="top-bar">
+            <header><img src="imgs/Logo.png" alt="Logo ESPE" class="top-logo"></header> 
+        </div>
 
-    <!-- Fondo -->
-    <div class="fondo">
-        <img src="imgs/Fondo-Web.png" alt="Fondo" class="fondo-img">
+        <div class="title-section">
+            <h1 class="title">ESPE<br>Sobre Ruedas</h1>
+        </div>
+
+        <!-- Contenedor translúcido -->
+        <div class="content-box">
+            <main>
+                <h3 class="subtitle">INGRESE SUS CREDENCIALES DE ACCESO</h3>
+
+                <form class="login-form">
+                    <div class="input-icon">
+                    <img class="icon" src="imgs/AddUsuario-Web.png" alt="icono usuario">
+                    <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario">
+                    </div>
+
+                    <div class="input-icon">
+                    <img class="icon" src="imgs/password.png" alt="icono contraseña">
+                    <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+                    </div>
+
+
+                    <div class="remember">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Recuérdame</label>
+                    </div>
+
+                    <div class="buttons">
+                        <button type="button" onclick="location.href='Sign up.html'" class="btn-register">Registrarse</button>
+                        <button type="button" onclick="location.href='home.html'" class="btn-login">Iniciar sesión</button>
+                    </div>
+                </form>
+            </main>
+        </div>
+        <footer>
+            <p><b>DESARROLLADO POR:</b></p>
+            <img src="imgs/ITINTrasparente.png" alt="Logo ESPE" class="footer-logo">
+        </footer>
     </div>
-
-    <!-- Contenedor principal -->
-    <main class="container">
-
-        <!-- Header Verde -->
-        <header class="header-verde">
-            <img src="imgs/Logo.png" alt="Logo Águila" class="logo">
-        </header>
-
-        <!-- Formulario de sesión -->
-        <section class="form-sesion">
-            <h2>INICIASTE SESIÓN COMO:</h2>
-            <h3 class="acompanante">ACOMPAÑANTE</h3>
-            <h3 class="bienvenido">BIENVENIDO:</h3>
-
-            <!-- Historial Rutas -->
-            <div class="input-group">
-                <label>HISTORIAL RUTAS:</label>
-                <input type="text" placeholder="CADE" readonly>
-                <input type="text" placeholder="La Chorrera" readonly>
-            </div>
-
-            <!-- Nueva Ruta: Botón de Google Maps -->
-            <div class="nueva-ruta">
-                <label>INGRESAR NUEVA RUTA:</label>
-                <button class="btn-mapa" onclick="abrirGoogleMaps()">
-                    <img src="imgs/Mapa-Web.png" alt="Seleccionar en Google Maps">
-                </button>
-            </div>
-
-            <!-- Opciones Chofer -->
-            <div class="opciones-chofer">
-                <p>--- OPCIONES PARA ELEGIR CHOFER ---</p>
-
-                <button class="btn-buscar">
-                    <img src="imgs/Chofer-Web.png" alt="Buscar Chofer">
-                    <span>BUSCAR NUEVO CHOFER:</span>
-                </button>
-
-                <button class="btn-elegir">
-                    <img src="imgs/ElegirUsuario-Web.png" alt="Elegir Chofer">
-                    <span>ELEGIR CHOFER:</span>
-                </button>
-            </div>
-
-            <!-- Acciones finales (SALIR al final) -->
-            <div class="acciones-finales">
-                <button class="btn-ingresar">
-                    <img src="imgs/Chofer-Web.png" alt="Ingresar como Chofer">
-                    <span>INGRESAR COMO CHOFER</span>
-                </button>
-
-                <button class="btn-registro" onclick="location.href='Sign_up_driver.html'">
-                    <img src="imgs/Carro-Web.png" alt="Registrarse">
-                    <span>REGISTRATE COMO CHOFER</span>
-                </button>
-
-                <!-- SALIR AL FINAL -->
-                <button class="btn-salir" onclick="location.href='Log_in.html'">
-                    <img src="imgs/Salir-Web.png" alt="Salir">
-                    <span>SALIR</span>
-                </button>
-            </div>
-
-        </section>
-    </main>
-
-    <!-- Script para abrir Google Maps -->
-    <script>
-        function abrirGoogleMaps() {
-            // Abre Google Maps en modo "elegir ubicación"
-            window.open(
-                'https://www.google.com/maps/search/?api=1&query=ecuador',
-                '_blank'
-            );
-        }
-    </script>
-
 </body>
-
 </html>
