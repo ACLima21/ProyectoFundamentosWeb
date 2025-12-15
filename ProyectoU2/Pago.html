@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P Hotels - Confirma y Paga</title>
+    <link rel="stylesheet" href="styles/stylePago.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">P Hotels.com</div>
+        <nav>
+            <span>ECU 🇪🇨</span>
+            <span>Atención al Cliente</span>
+            <span>Mis Viajes</span>
+            <span class="user-profile">User_id781586 👤</span>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-title">
+            <div onclick="location.href='huesped_user.html'" class="back-arrow">←</div>
+            <h1>Confirma y paga</h1>
+        </div>
+
+        <div class="layout-grid">
+            
+            <div class="steps-container">
+                
+                <input type="radio" name="booking-step" id="step-1" checked>
+                <input type="radio" name="booking-step" id="step-2">
+                <input type="radio" name="booking-step" id="step-3">
+
+                <div class="step-card" id="card-1">
+                    <div class="step-header">
+                        <h2>1. Elige cuando quieres pagar</h2>
+                        <div class="check-icon">✓</div>
+                    </div>
+                    <div class="step-content">
+                        <div class="payment-option selected">
+                            <div class="radio-circle"></div>
+                            <div class="option-text">
+                                <strong>Paga $1288.00 ahora</strong>
+                            </div>
+                        </div>
+                        <div class="payment-option">
+                            <div class="radio-circle"></div>
+                            <div class="option-text">
+                                <strong>Paga $0 ahora</strong>
+                                <p>Se cobraron $1288.00 el 10 dic. Sin tarifas adicionales. <b>Más información</b></p>
+                            </div>
+                        </div>
+                        <label for="step-2" class="btn-black">Listo</label>
+                    </div>
+                </div>
+
+                <div class="step-card" id="card-2">
+                    <div class="step-header">
+                        <h2>2. Agrega un método de pago</h2>
+                        <div class="check-icon">✓</div>
+                    </div>
+                    <div class="step-content">
+                        <div class="payment-icons">
+                            <span>💳 Tarjeta de crédito o débito</span>
+                            <div class="icons-row">
+                                <span class="card-logo">VISA</span>
+                                <span class="card-logo">MC</span>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="input-group full-width">
+                                <label>Número de tarjeta 🔒</label>
+                                <input type="text" placeholder="0000 0000 0000 0000">
+                            </div>
+                            <div class="input-group">
+                                <label>Caducidad</label>
+                                <input type="text" placeholder="MM/AA">
+                            </div>
+                            <div class="input-group">
+                                <label>Código CVV</label>
+                                <input type="text" placeholder="123">
+                            </div>
+                            <div class="input-group full-width">
+                                <label>Código postal</label>
+                                <input type="text">
+                            </div>
+                            <div class="input-group full-width">
+                                <label>País/región</label>
+                                <input type="text" value="Ecuador">
+                            </div>
+                        </div>
+
+                        <div class="alt-payment">
+                            <span>Paypal</span>
+                            <div class="circle-check"></div>
+                        </div>
+                        <div class="alt-payment">
+                            <span>GPay</span>
+                            <div class="circle-check"></div>
+                        </div>
+
+                        <label for="step-3" class="btn-black">Listo</label>
+                    </div>
+                </div>
+
+                <div class="step-card" id="card-3">
+                    <div class="step-header">
+                        <h2>3. Revisa la reservación</h2>
+                        <div class="check-icon">✓</div>
+                    </div>
+                    <div class="step-content">
+                        <p>Por favor revisa que todos los datos sean correctos antes de finalizar.</p>
+                        <button class="btn-black">Pagar y Reservar</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <aside class="summary-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hotel">
+                    <div class="hotel-overlay">Hilton Garden / Central Park</div>
+                </div>
+                
+                <div class="summary-details">
+                    <h3>Hilton Garden / Central Park</h3>
+                    <p class="sub-text">Distrito del teatro</p>
+                    <p class="total-tag">$753 en total</p>
+                    
+                    <div class="info-block">
+                        <h4>Cancelación gratuita</h4>
+                        <p>Si cancelas la reservación antes del 18 de diciembre recibirás un reembolso total. <b>Política completa</b></p>
+                    </div>
+
+                    <hr>
+
+                    <div class="info-row">
+                        <div>
+                            <h4>Fechas</h4>
+                            <p>19 - 21 de dic de 2025</p>
+                        </div>
+                        <button class="btn-outline">Cambiar</button>
+                    </div>
+
+                    <hr>
+
+                    <div class="info-row">
+                        <div>
+                            <h4>Huéspedes</h4>
+                            <p>1 adulto</p>
+                        </div>
+                        <button class="btn-outline">Cambiar</button>
+                    </div>
+
+                    <hr>
+
+                    <div class="price-section">
+                        <h4>Información del precio</h4>
+                        <div class="price-row">
+                            <span>2 noches x $322</span>
+                            <span>$644 por noche</span>
+                        </div>
+                        <div class="price-row green-text">
+                            <span>Descuento por reservación adelantada</span>
+                            <span>-$4.80</span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="total-row">
+                        <h3>Total USD</h3>
+                        <h3>$1288.00</h3>
+                    </div>
+
+                    <button class="btn-gray">Desglose del precio</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>

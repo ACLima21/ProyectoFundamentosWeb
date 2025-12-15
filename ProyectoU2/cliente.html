@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente</title>
+    <link rel="stylesheet" href="styles/styleCliente.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a >P-Home</a></div>
+    </header>
+
+    <main class="main-container">
+        
+        <div class="top-bar">
+            <h1 class="property-title">Suite Moderna en 9 de Octubre • Check-in 24/7</h1>
+            <button class="share-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                    <polyline points="16 6 12 2 8 6"></polyline>
+                    <line x1="12" y1="2" x2="12" y2="15"></line>
+                </svg>
+                Compartir
+            </button>
+        </div>
+
+        <div class="content-grid">
+            
+            <div class="left-column">
+                <div class="gallery">
+                    <div class="main-image img-wrapper">
+                        <img src="imgs/imagenes_Cliente/Recibidor.png" alt="Sala y Recibidor">
+                    </div>
+
+                    <div class="thumbnails" id="galeriaOculta">
+                        <div class="thumb-item img-wrapper">
+                            <img src="imgs/imagenes_Cliente/Cocina.png" alt="Cocina Integral">
+                        </div>
+                        <div class="thumb-item img-wrapper">
+                            <img src="imgs/imagenes_Cliente/Comedor.png" alt="Comedor">
+                        </div>
+                        <div class="thumb-item img-wrapper">
+                            <img src="imgs/imagenes_Cliente/Habitacion.png" alt="Habitación Principal">
+                        </div>
+                        <div class="thumb-item img-wrapper">
+                            <img src="imgs/imagenes_Cliente/Baño.png" alt="Baño">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-arrow" id="btnFlecha">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="booking-card">
+                <div class="price-header">
+                    $75 <span>por dos noches</span>
+                </div>
+
+                <div class="input-box">
+                    <div class="dates-row">
+                        <div class="input-field border-right">
+                            <span class="input-label">Llegada</span>
+                            <div class="input-value">5/12/2025</div>
+                        </div>
+                        <div class="input-field">
+                            <span class="input-label">Salida</span>
+                            <div class="input-value">7/12/2025</div>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <span class="input-label">Huéspedes</span>
+                        <div class="input-value">1 huésped</div>
+                    </div>
+                </div>
+
+                <a href="PagDeReserva.html" class="btn-reserve">Reserva</a>
+
+                <div class="card-description">
+                    <strong>Sobre este alojamiento:</strong><br>
+                    Disfruta de una estancia cómoda y elegante. Esta suite cuenta con un amplio recibidor con bar, cocina integral equipada en tonos madera, comedor iluminado, una confortable habitación y baño moderno.
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+/* VARIABLES Y RESET */
+:root {
+    --dark-bg: #404040;
+    --primary-red: #D66A6A;
+    --text-white: #ffffff;
+    --text-black: #1a1a1a;
+    --card-radius: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: var(--text-black);
+    /* Transición suave al cargar */
+    opacity: 0;
+    animation: bodyFadeIn 0.8s forwards;
+}
+
+@keyframes bodyFadeIn { to { opacity: 1; } }
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-black);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-black);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.user-btn {
+    background-color: var(--primary-red);
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-red);
+}
+
+/* Animación original mantenida */
+.user-btn:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+/* HERO BANNER */
+.hero-banner {
+    background-color: var(--dark-bg);
+    padding: 60px 5%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 250px;
+}
+
+.hero-subtitle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* MAIN CONTENT */
+.container {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* BENEFITS CARDS - GRID */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.dark-card {
+    background-color: var(--dark-bg);
+    border-radius: var(--card-radius);
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    align-self: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.dark-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.dark-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* CTA FOOTER CARD */
+.cta-card {
+    background-color: var(--dark-bg);
+    border-radius: var(--card-radius);
+    padding: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    min-height: 250px;
+    position: relative;
+}
+
+.house-graphic {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.house-graphic svg {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+}
+
+.cta-content {
+    padding: 40px;
+    flex: 1;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.btn-register {
+    background-color: var(--primary-red);
+    color: #1a1a1a;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Animación original mantenida */
+.btn-register:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVE (3 TAMAÑOS) --- */
+
+/* 1. Tablet (max-width 900px) */
+@media (max-width: 900px) {
+    .benefits-grid {
+        gap: 20px; /* Menor espacio */
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+
+/* 2. Mobile (max-width 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul {
+        gap: 15px;
+        font-size: 0.8rem;
+    }
+    
+    /* Grid se vuelve columna simple en móvil */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-card {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-bottom: 0;
+    }
+    .house-graphic {
+        width: 60%;
+        justify-content: center;
+        padding: 0;
+    }
+    .cta-content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+}
