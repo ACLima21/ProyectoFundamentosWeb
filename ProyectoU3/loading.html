@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando P-Home...</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #404040;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Modificado para usar Flexbox y apilar el contenido */
+        .loader-container {
+            position: relative;
+            width: 300px;
+            height: auto; 
+            min-height: 300px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-text {
+            color: white;
+            text-align: center;
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            animation: blink 3s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+
+        /* Contenedor del SVG */
+        .map-wrapper {
+            width: 300px;
+            height: 200px;
+            position: relative;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .path-line {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 4;
+            stroke-dasharray: 10;
+        }
+
+        .traveler {
+            width: 40px;
+            height: 40px;
+            background-color: #D66A6A;
+            border-radius: 50%;
+            position: absolute;
+            top: 0; left: 0;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 0 20px rgba(214, 106, 106, 0.8);
+            
+            /* Ajuste de offset-path para coincidir con el nuevo wrapper */
+            offset-path: path('M10,100 C60,0 140,0 150,100 S240,200 290,100');
+            offset-rotate: auto 90deg;
+            animation: travel 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+        }
+
+        @keyframes travel {
+            0% { offset-distance: 0%; transform: scale(0.8); }
+            100% { offset-distance: 100%; transform: scale(1.2); }
+        }
+
+        /*  ESTILOS DEL BOTÓN  */
+        .btn-enter {
+            padding: 12px 30px;
+            background-color: #D66A6A;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            opacity: 0; /* Oculto al inicio */
+            transform: translateY(-10px);
+            transition: all 0.5s ease;
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+
+        .btn-enter.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+            cursor: pointer;
+        }
+
+        .btn-enter:hover {
+            background-color: white;
+            color: #D66A6A;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="loader-container">
+        <div class="map-wrapper">
+            <svg viewBox="0 0 300 200">
+                <path class="path-line" d="M10,100 C60,0 140,0 150,100 S240,200 290,100" />
+            </svg>
+            <div class="traveler">✈️</div>
+        </div>
+
+        <div class="loading-text">BUSCANDO ALOJAMIENTO...</div>
+
+        <a href="detalle.html" class="btn-enter" id="enterBtn">Ingresar al Sitio</a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(() => {
+                const btn = document.getElementById('enterBtn');
+                const text = document.querySelector('.loading-text');
+                // Mostrar botón
+                btn.classList.add('visible');
+                text.innerText = "¡ENCONTRADO!";
+                text.style.animation = "none";
+                text.style.color = "#D66A6A"; 
+                text.style.fontWeight = "bold";
+
+            }, 3500); 
+        };
+    </script>
+</body>
+</html>

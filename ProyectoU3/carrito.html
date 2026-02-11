@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>P-Home - Carrito</title>
+    <link rel="stylesheet" href="styles/styleCarrito.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">P-Home</div>
+    <nav class="nav">
+        <a href="catalogo.html">Home</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="#">Carrito</a>
+    </nav>
+    <div class="user-profile">
+        <span class="user-id">User_id781586</span>
+        <div class="user-icon">👤</div>
+    </div>
+</header>
+
+<main class="carrito-container">
+
+    <h1 class="titulo-carrito">Mi Carrito</h1>
+
+    <div class="filtros">
+        <input type="text" id="busqueda" placeholder="Buscar por nombre o ciudad">
+
+        <select id="filtroCiudad">
+            <option value="">Todas las ciudades</option>
+        </select>
+
+        <select id="ordenPrecio">
+            <option value="">Ordenar por precio</option>
+            <option value="asc">Menor a mayor</option>
+            <option value="desc">Mayor a menor</option>
+        </select>
+    </div>
+
+    <div id="listaCarrito" class="grid-carrito"></div>
+
+</main>
+
+<script src="carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+/* VARIABLES Y RESET */
+:root {
+    --dark-bg: #404040;
+    --primary-red: #D66A6A;
+    --accent-yellow: #DCE127;
+    --text-white: #ffffff;
+    --text-black: #1a1a1a;
+    --card-bg: #E6E6E6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    overflow-x: hidden;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* HEADER / NAV */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-black);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-black);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- NUEVO ESTILO PARA EL USUARIO LOGUEADO --- */
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f0f0f0;
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 2px solid var(--primary-red);
+    color: var(--text-black);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: default; /* No parece clicable */
+    transition: all 0.3s;
+}
+
+.user-badge:hover {
+    background-color: var(--primary-red);
+    color: white;
+}
+
+.user-icon-circle {
+    width: 24px;
+    height: 24px;
+    background-color: var(--dark-bg);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* HERO SECTION */
+.hero {
+    background-color: var(--dark-bg);
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    min-height: 500px;
+    color: white;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.highlight-yellow {
+    color: var(--accent-yellow);
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: var(--primary-red);
+    color: black;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-red);
+}
+
+.btn-hero:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.hero-subtext {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 60px 60px 60px 60px;
+    box-shadow: -20px 20px 0px rgba(255,255,255,0.1);
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.02);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- OFFERS SECTION --- */
+.offers {
+    padding: 60px 0;
+    background-color: white;
+    overflow: hidden;
+}
+
+.offers-title {
+    padding: 0 5%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: black;
+    max-width: 800px;
+}
+
+.slider-track {
+    display: flex;
+    gap: 30px;
+    width: calc(350px * 6 + 30px * 6);
+    animation: scroll-left 15s linear infinite;
+    padding-left: 5%;
+    /* CORRECCIÓN MÓVIL INCLUIDA */
+    padding-bottom: 20px;
+}
+
+.slider-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-350px * 3 - 30px * 3)); }
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card {
+    width: 350px;
+    min-width: 350px;
+    background-color: var(--card-bg);
+    border-radius: 30px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.price {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: black;
+}
+
+.price span {
+    font-size: 1.4rem;
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 900px) {
+    .hero { padding: 60px 5%; gap: 30px; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero-image { height: 350px; }
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 20px; }
+    nav ul { gap: 20px; font-size: 0.8rem; }
+    .hero { grid-template-columns: 1fr; text-align: center; padding: 40px 5%; }
+    .hero-content { align-items: center; max-width: 100%; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero-image { width: 100%; height: 300px; }
+    .offers-title { font-size: 1.8rem; text-align: center; }
+}
+
+/*HÉCTOR
+/* --- Navegación Fija --- */
+header, .navbar {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+body { padding-top: 80px; }
+
+/* --- Grid del Catálogo --- */
+.contenedor-casas {
+    display: grid;
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Responsividad (3 Pantallas) --- */
+
+/* 1. Mobile (≤ 600px): 1 columna */
+@media (max-width: 600px) {
+    .contenedor-casas { grid-template-columns: 1fr; }
+}
+
+/* 2. Tablet (≤ 768px): 2 columnas */
+@media (min-width: 601px) and (max-width: 768px) {
+    .contenedor-casas { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 3. Desktop (≥ 1024px): 3 o 4 columnas para ver las 10 casas */
+@media (min-width: 1024px) {
+    .contenedor-casas { grid-template-columns: repeat(3, 1fr); }
+}

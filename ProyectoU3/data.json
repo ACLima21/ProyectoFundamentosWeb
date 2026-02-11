@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "nombre_propiedad": "Casa Vista al Mar",
+    "ciudad": "Manta",
+    "reservado": true,
+    "precio": 150,
+    "imagen": "casa1.jpg"
+  },
+  {
+    "id": 2,
+    "nombre_propiedad": "Cabaña Bosque Encantado",
+    "ciudad": "Mindo",
+    "reservado": false,
+    "precio": 80,
+    "imagen": "casa2.jpg"
+  },
+  {
+    "id": 3,
+    "nombre_propiedad": "Apartamento Centro Histórico",
+    "ciudad": "Quito",
+    "reservado": false,
+    "precio": 60,
+    "imagen": "casa3.jpg"
+  },
+  {
+    "id": 4,
+    "nombre_propiedad": "Villa Sol y Playa",
+    "ciudad": "Salinas",
+    "reservado": false,
+    "precio": 200,
+    "imagen": "casa4.jpg"
+  },
+  {
+    "id": 5,
+    "nombre_propiedad": "Loft Urbano Moderno",
+    "ciudad": "Guayaquil",
+    "reservado": false,
+    "precio": 90,
+    "imagen": "casa5.jpg"
+  },
+  {
+    "id": 6,
+    "nombre_propiedad": "Finca La Esperanza",
+    "ciudad": "Ibarra",
+    "reservado": false,
+    "precio": 120,
+    "imagen": "casa6.jpg"
+  },
+  {
+    "id": 7,
+    "nombre_propiedad": "Suite Ejecutiva Skyline",
+    "ciudad": "Quito",
+    "reservado": false,
+    "precio": 110,
+    "imagen": "casa7.jpg"
+  },
+  {
+    "id": 8,
+    "nombre_propiedad": "Casa Rural Los Olivos",
+    "ciudad": "Ambato",
+    "reservado": false,
+    "precio": 75,
+    "imagen": "casa8.jpg"
+  },
+  {
+    "id": 9,
+    "nombre_propiedad": "Penthouse Vista Panorámica",
+    "ciudad": "Guayaquil",
+    "reservado": false,
+    "precio": 250,
+    "imagen": "casa9.jpg"
+  },
+  {
+    "id": 10,
+    "nombre_propiedad": "Bungalow Jardín Tropical",
+    "ciudad": "Tena",
+    "reservado": false,
+    "precio": 85,
+    "imagen": "casa10.jpg"
+  }
+]

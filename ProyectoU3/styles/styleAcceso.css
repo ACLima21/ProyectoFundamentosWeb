@@ -1,0 +1,263 @@
+/* VARIABLES Y RESET */
+:root {
+    --dark-bg: #404040;
+    --primary-red: #D66A6A;
+    --text-white: #ffffff;
+    --text-black: #1a1a1a;
+    --input-bg: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+/* CONTENEDOR PRINCIPAL (GRID) */
+.login-container {
+    width: 90%;
+    max-width: 1000px;
+    height: 600px;
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* SECCIÓN DE IMAGEN (IZQUIERDA) */
+.image-side {
+    background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(64,64,64,0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    color: white;
+}
+
+.overlay h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.overlay p {
+    font-size: 1rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* SECCIÓN DEL FORMULARIO (DERECHA) */
+.form-side {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Logo en la parte superior derecha */
+.mini-logo {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--dark-bg);
+    text-decoration: none;
+}
+
+/* ESCONDER LOS RADIO BUTTONS */
+input[type="radio"] {
+    display: none;
+}
+
+/* TOGGLE BUTTONS (Switch entre Login y Registro) */
+.toggle-box {
+    background-color: #eee;
+    border-radius: 30px;
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #777;
+    transition: color 0.3s;
+}
+
+/* El fondo rojo que se mueve */
+.toggle-bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+    background-color: var(--primary-red);
+    border-radius: 25px;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 1;
+}
+
+/* Cambiar color del texto cuando está activo */
+#toggle-login:checked ~ .toggle-box label[for="toggle-login"],
+#toggle-register:checked ~ .toggle-box label[for="toggle-register"] {
+    color: white;
+}
+
+/* Mover el fondo rojo cuando se selecciona Registro */
+#toggle-register:checked ~ .toggle-box .toggle-bg {
+    transform: translateX(calc(100%));
+}
+
+/* FORMULARIOS */
+.forms-container {
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Mostrar formulario de login por defecto */
+#toggle-login:checked ~ .forms-container #loginForm {
+    opacity: 1;
+    position: relative;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+/* Mostrar formulario de registro cuando se selecciona */
+#toggle-register:checked ~ .forms-container #registerForm {
+    opacity: 1;
+    position: relative;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.title-form {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-bg);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.subtitle-form {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    background-color: var(--input-bg);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    background-color: white;
+}
+
+.btn-submit {
+    background-color: var(--primary-red);
+    color: var(--text-black);
+    font-weight: 700;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: all 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-submit:hover {
+    transform: scale(1.02);
+    background-color: var(--dark-bg);
+    color: white;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 768px) {
+    .login-container {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .image-side {
+        display: none;
+    }
+
+    .form-side {
+        padding: 40px 20px;
+        padding-top: 70px;
+    }
+}

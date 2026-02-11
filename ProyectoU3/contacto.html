@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P Hotels - Contacto</title>
+    <link rel="stylesheet" href="styles/styleContacto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="logo" onclick="location.href='index.html'">P Hotels.com</div>
+        <nav>
+            <span onclick="location.href='index.html'">Home</span>
+            <span>Explorar</span>
+            <span>Mis Reservas</span>
+            <span class="user-profile">Iniciar sesión 👤</span>
+        </nav>
+    </header>
+
+
+    <!-- CONTENIDO -->
+    <main class="contact-container">
+
+        <h1>Centro de Ayuda</h1>
+        <p class="subtitle">
+            ¿Tienes un problema con tu reserva o pago? Envíanos un mensaje y te ayudaremos.
+        </p>
+
+        <form id="contactForm" class="contact-form">
+
+            <input type="text" id="nombre" placeholder="Nombre completo">
+
+            <input type="email" id="email" placeholder="Correo electrónico">
+
+            <select id="tipo">
+                <option value="">Selecciona el tipo de consulta</option>
+                <option value="reserva">Problema con reserva</option>
+                <option value="pago">Problema con pago</option>
+                <option value="tecnico">Error técnico</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <textarea id="mensaje" placeholder="Describe tu problema o consulta"></textarea>
+
+            <button type="submit">Enviar mensaje</button>
+
+            <!-- ESTADOS -->
+            <div class="form-state form-loading">Enviando mensaje...</div>
+            <div class="form-state form-error">Correo inválido.</div>
+            <div class="form-state form-success">Mensaje enviado correctamente.</div>
+            <div class="form-state form-empty">Todos los campos son obligatorios.</div>
+
+        </form>
+
+    </main>
+
+    <script src="js/contacto.js"></script>
+
+</body>
+</html>

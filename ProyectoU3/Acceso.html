@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso P-Home</title>
+    <link rel="stylesheet" href="styles/styleAcceso.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-container">
+        
+        <div class="image-side">
+            <div class="overlay">
+                <h2>Bienvenido a<br>P-Home</h2>
+                <p>Tu hogar ideal está a solo un clic de distancia.</p>
+            </div>
+        </div>
+
+        <div class="form-side">
+            <a class="mini-logo">P-Home</a>
+
+            <!-- Radio buttons ocultos para controlar el estado -->
+            <input type="radio" name="toggle" id="toggle-login" checked>
+            <input type="radio" name="toggle" id="toggle-register">
+
+            <div class="toggle-box">
+                <div class="toggle-bg"></div>
+                <label for="toggle-login" class="toggle-btn">Ingresar</label>
+                <label for="toggle-register" class="toggle-btn">Registrar</label>
+            </div>
+
+            <div class="forms-container">
+                <form class="input-group" id="loginForm">
+                    <h1 class="title-form">¡Hola de nuevo!</h1>
+                    <p class="subtitle-form">Ingresa tus datos para continuar</p>
+                    
+                    <input type="email" placeholder="Correo Electrónico" required>
+                    <input type="password" placeholder="Contraseña" required>
+                    
+                    <a href="catalogo.html" class="btn-submit">Iniciar Sesión</a>
+
+                </form>
+
+                <form class="input-group" id="registerForm">
+                    <h1 class="title-form">Crear Cuenta</h1>
+                    <p class="subtitle-form">Únete a nuestra comunidad hoy</p>
+                    
+                    <input type="text" placeholder="Nombre Completo" required>
+                    <input type="email" placeholder="Correo Electrónico" required>
+                    <input type="password" placeholder="Contraseña" required>
+                    
+                    <a href="catalogo.html" class="btn-submit">Registro</a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
