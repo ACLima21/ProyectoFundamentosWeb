@@ -6,58 +6,79 @@
     <title>P Hotels - Contacto</title>
     <link rel="stylesheet" href="styles/styleContacto.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
     <!-- HEADER -->
     <header class="main-header">
-        <div class="logo" onclick="location.href='index.html'">P Hotels.com</div>
+        <div class="logo">P-Home</div>
         <nav>
-            <span onclick="location.href='index.html'">Home</span>
-            <span>Explorar</span>
-            <span>Mis Reservas</span>
-            <span class="user-profile">Iniciar sesión 👤</span>
+            <ul>
+                <li><a href="catalogo.html">Home</a></li>
+                <li><a href="anfitrion.html">Convierte en anfitrión</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
         </nav>
+
+        <div class="user-badge">
+            User123_
+            <div class="user-icon-circle">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+            </div>
+        </div>
     </header>
 
 
     <!-- CONTENIDO -->
-    <main class="contact-container">
+    <section class="contact-section">
+        <div class="contact-container">
 
-        <h1>Centro de Ayuda</h1>
-        <p class="subtitle">
-            ¿Tienes un problema con tu reserva o pago? Envíanos un mensaje y te ayudaremos.
-        </p>
+            <h1>Centro de Ayuda</h1>
+            <br>
+            <p>¿Tienes un problema con tu reserva o pago? Envíanos un mensaje y te ayudaremos.</p>
+            <br>
+            <form id="contactForm" class="contact-form">
 
-        <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="nombre" placeholder="Nombre completo">
+                    <span class="error-text">*Campo obligatorio</span>
+                </div>
 
-            <input type="text" id="nombre" placeholder="Nombre completo">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Correo electrónico">
+                    <span class="error-text">*Campo obligatorio</span>
+                </div>
 
-            <input type="email" id="email" placeholder="Correo electrónico">
+                <div class="form-group">
+                    <select id="tipo">
+                        <option value="">Selecciona el tipo de consulta</option>
+                        <option>Problema con reserva</option>
+                        <option>Problema con pago</option>
+                        <option>Consulta general</option>
+                    </select>
+                    <span class="error-text">*Campo obligatorio</span>
+                </div>
 
-            <select id="tipo">
-                <option value="">Selecciona el tipo de consulta</option>
-                <option value="reserva">Problema con reserva</option>
-                <option value="pago">Problema con pago</option>
-                <option value="tecnico">Error técnico</option>
-                <option value="otro">Otro</option>
-            </select>
+                <div class="form-group">
+                    <textarea id="mensaje" placeholder="Describe tu problema"></textarea>
+                    <span class="error-text">*Campo obligatorio</span>
+                </div>
 
-            <textarea id="mensaje" placeholder="Describe tu problema o consulta"></textarea>
+                <button type="submit">Enviar mensaje</button>
 
-            <button type="submit">Enviar mensaje</button>
+                <!-- Estados -->
+                <div class="form-state loading">Enviando mensaje...</div>
+                <div class="form-state error">Correo inválido.</div>
+                <div class="form-state success">Mensaje enviado correctamente ✔</div>
 
-            <!-- ESTADOS -->
-            <div class="form-state form-loading">Enviando mensaje...</div>
-            <div class="form-state form-error">Correo inválido.</div>
-            <div class="form-state form-success">Mensaje enviado correctamente.</div>
-            <div class="form-state form-empty">Todos los campos son obligatorios.</div>
-
-        </form>
-
-    </main>
+            </form>
+        </div>
+    </section>
 
     <script src="js/contacto.js"></script>
-
 </body>
 </html>

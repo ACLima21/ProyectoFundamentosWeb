@@ -121,10 +121,35 @@
                 <p class="cancellation-summary">
                     $0 hoy - Cancelación gratuita antes del 16 de abril
                 </p>
-                <button onclick="location.href='Pago.html'" class="reserve-button">Reserva</button>
+                <button onclick="guardarEnCarrito('Habitación en Nueva York - Hitlon Garden', 614, 'Habitacion.png')" class="reserve-button">Reserva</button>
                 <p class="reserve-note">Te mereces una escapada a un refugio de primera categoría<br>P Hotels es la mejor opción</p>
             </div>
         </aside>
     </main>
+
+    <script>
+        function guardarEnCarrito(nombrePropiedad, precio, nombreImagen) {
+            let carrito = JSON.parse(localStorage.getItem('carritoReservas')) || [];
+            
+            const nuevaReserva = {
+                id: Date.now(),
+                nombre: nombrePropiedad,
+                precio: parseFloat(precio),
+                imagen: nombreImagen,
+                estado: 'pendiente'
+            };
+            
+            carrito.push(nuevaReserva);
+            localStorage.setItem('carritoReservas', JSON.stringify(carrito));
+            
+            const irAlCarrito = confirm(`¡Propiedad reservada con éxito!\n\n¿Deseas ir al carrito para pagar ahora?\n\n• [Aceptar] para ir a Pagar\n• [Cancelar] para reservar nuevamente`);
+            
+            if (irAlCarrito) {
+                window.location.href = 'carrito.html';
+            } else {
+                window.location.href = 'catalogo.html'; 
+            }
+        }
+    </script>
 </body>
 </html>

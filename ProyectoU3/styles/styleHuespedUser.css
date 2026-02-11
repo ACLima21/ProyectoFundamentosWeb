@@ -160,12 +160,6 @@ nav a {
 }
 
 /* --- OFFERS SECTION --- */
-.offers {
-    padding: 60px 0;
-    background-color: white;
-    overflow: hidden;
-}
-
 .offers-title {
     padding: 0 5%;
     font-size: 2.5rem;
@@ -175,29 +169,8 @@ nav a {
     max-width: 800px;
 }
 
-.slider-track {
-    display: flex;
-    gap: 30px;
-    width: calc(350px * 6 + 30px * 6);
-    animation: scroll-left 15s linear infinite;
-    padding-left: 5%;
-    /* CORRECCIÓN MÓVIL INCLUIDA */
-    padding-bottom: 20px;
-}
-
 .slider-track:hover {
     animation-play-state: paused;
-}
-
-@keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-350px * 3 - 30px * 3)); }
-}
-
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
 }
 
 .card {
@@ -236,6 +209,7 @@ nav a {
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 10px;
+    color: black;
 }
 
 .card-info p {
@@ -307,4 +281,24 @@ body { padding-top: 80px; }
 /* 3. Desktop (≥ 1024px): 3 o 4 columnas para ver las 10 casas */
 @media (min-width: 1024px) {
     .contenedor-casas { grid-template-columns: repeat(3, 1fr); }
+}
+
+.offers {
+    overflow: hidden; /* Corta lo que sale de la pantalla */
+    width: 100%;
+    padding: 40px 0;
+}
+
+.slider-track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 30px;
+}
+
+.card-link {
+    flex-shrink: 0; /* Evita que las cartas se hagan chiquitas */
+    width: 350px;
+    text-decoration: none;
+    display: block;
 }

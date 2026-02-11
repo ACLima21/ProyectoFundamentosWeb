@@ -1,30 +1,45 @@
 const form = document.getElementById("contactForm");
-const nombre = document.getElementById("nombre");
-const email = document.getElementById("email");
-const mensaje = document.getElementById("mensaje");
+const inputs = document.querySelectorAll("#contactForm input, #contactForm select, #contactForm textarea");
 
-const loading = document.querySelector(".form-loading");
-const error = document.querySelector(".form-error");
-const success = document.querySelector(".form-success");
-const empty = document.querySelector(".form-empty");
+const loading = document.querySelector(".loading");
+const errorState = document.querySelector(".error");
+const success = document.querySelector(".success");
 
 function resetStates() {
     document.querySelectorAll(".form-state").forEach(el => el.style.display = "none");
 }
 
+function clearErrors() {
+    inputs.forEach(input => {
+        input.classList.remove("input-error");
+        const errorText = input.parentElement.querySelector(".error-text");
+        errorText.style.display = "none";
+    });
+}
+
 form.addEventListener("submit", function(e) {
     e.preventDefault();
+
     resetStates();
+    clearErrors();
 
-    if (!nombre.value || !email.value || !mensaje.value) {
-        empty.style.display = "block";
-        return;
-    }
+    let hasError = false;
 
+    inputs.forEach(input => {
+        if (input.value.trim() === "") {
+            input.classList.add("input-error");
+            input.parentElement.querySelector(".error-text").style.display = "block";
+            hasError = true;
+        }
+    });
+
+    if (hasError) return;
+
+    const email = document.getElementById("email").value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(email.value)) {
-        error.style.display = "block";
+    if (!emailRegex.test(email)) {
+        errorState.style.display = "block";
         return;
     }
 
